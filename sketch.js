@@ -29,6 +29,9 @@ function draw(){
                 if(key=="1"){
                   black_white(index, g,a);
               }
+              if(key=="2"){
+                  question_two(index,row,col,r,g,b,a);
+              }
                 if(key=="3"){
                   question_three(index, r,g,b,a);
               }
@@ -74,6 +77,13 @@ function black_white(index, g,a){
           pixels[index + 3] = a; //alpha
 }
 
+function question_two(index, row, col, r,g,b,a){
+    pixels[index] = r/2 - col - 123;
+    pixels[index + 1] = g*2 - row - 123;
+    pixels[index + 2] = b;
+    pixels[index + 3] = 255;
+}
+
 function question_three(index, r,g,b,a){
           pixels[index] = r; //red
           pixels[index + 1] = b; //green
@@ -110,10 +120,10 @@ function question_seven(index, row, col, r,g,b,a){
 }
 
 function question_eight(index, r,g,b,a){
-    if(index % 20 == 0)
-    pixels[index] = 255;
-    pixels[index + 1] = g;
-    pixels[index + 2] = 0;
+    if(index % 40 == 0)
+    pixels[index] = 210;
+    pixels[index + 1] = r;
+    pixels[index + 2] = r;
     pixels[index + 3] = a;
 }
 
